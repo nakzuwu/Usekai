@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", function () {
   const toggleBtn = document.getElementById('social-toggle');
   const popup = document.getElementById('social-popup');
@@ -42,4 +43,3 @@ document.addEventListener("DOMContentLoaded", () => {
     overlay.classList.add("hidden");
   });
 });
-

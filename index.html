@@ -10,8 +10,21 @@
     <title>USEKAI ID</title>
     <link rel="stylesheet" href="style.css" />
     <script src="main.js" defer></script>
+    <link
+      rel="preload"
+      as="video"
+      href="assets/preload.webm"
+      type="video/webm"
+    />
   </head>
   <body>
+    <!-- PRELOAD VIDEO SCREEN -->
+    <div id="preloader">
+      <video id="preload-video" autoplay muted playsinline>
+        <source src="assets/preload.webm" type="video/webm" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
     <div class="container">
       <nav class="navbar-center">
         <a href="https://www.instagram.com/usekai_id" target="_blank">
@@ -145,5 +158,18 @@
         </div>
       </div>
     </div>
+    <script>
+      const video = document.getElementById("preload-video");
+      const preloader = document.getElementById("preloader");
+
+      // Paksa preloader hilang setelah 3.5 detik
+      setTimeout(() => {
+        preloader.style.transition = "opacity 0.5s ease";
+        preloader.style.opacity = "0";
+        setTimeout(() => {
+          preloader.style.display = "none";
+        }, 500);
+      }, 3000); // 3.5 detik
+    </script>
   </body>
 </html>
